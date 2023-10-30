@@ -1,0 +1,5 @@
+<mvc:View controllerName="bti_framework.pages._base.cadastros.operacionais.config"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Page id="page" showHeader="false" class="sapUiNoContentPadding"/>
+</mvc:View>

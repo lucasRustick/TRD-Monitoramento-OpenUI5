@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<GenericTile tooltip=" " header="{config_tile>/titulo}" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+		<TileContent>
+			<NumericContent scale="{config_tile>/unidade_de_medida}" value="{= ${dados>/}[${config_tile>/valor_numerico}] || 0}" withMargin="false"/>
+		</TileContent>
+	</GenericTile>
+</core:FragmentDefinition>

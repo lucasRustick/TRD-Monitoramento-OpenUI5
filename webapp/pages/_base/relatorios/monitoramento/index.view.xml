@@ -1,0 +1,55 @@
+<mvc:View controllerName="bti_framework.pages._base.relatorios.monitoramento.config"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:mvc="sap.ui.core.mvc">
+    <f:DynamicPage id="page">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="Monitoramento"/>
+                </f:heading>
+                <f:actions>
+                    <Button text="Legenda" type="Emphasized"/>
+                    <Button text="Maps" type="Emphasized"/>
+                    <Button text="Pesquisar" type="Emphasized"/>
+                </f:actions>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader pinnable="false">
+                <FlexBox wrap="Wrap">
+                    <HBox alignItems="Center" class="sapUiSmallMarginEnd">
+                        <ComboBox placeholder="Selecione a unidade" selectedKey="{form>/dataRange}" selectionChange="" showClearIcon="true">
+                            <!-- <core:Item text="Intervalo de data" /> -->
+                            <core:Item key="POA" text="POA" />
+                            <core:Item key="RIO" text="RIO" />
+                            <core:Item key="JOI" text="JOI" />
+                            <core:Item key="CWB" text="CWB" />
+                            <core:Item key="FLN" text="FLN" />
+                            <core:Item key="SAO" text="SAO" />
+                        </ComboBox>
+                    </HBox>
+
+                    <HBox alignItems="Center" class="sapUiSmallMarginEnd">
+                        <Input width="15rem" placeholder="Tarefa"/>
+                    </HBox>
+
+                    <HBox alignItems="Center" class="sapUiSmallMarginEnd">
+                        <Input width="15rem" placeholder="Entidade"/>
+                    </HBox>
+
+                    <HBox alignItems="Center" class="sapUiSmallMarginEnd">
+                        <Input width="15rem" placeholder="Tarefa já atribuaida"/>
+                    </HBox>
+                </FlexBox>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>

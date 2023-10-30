@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<GenericTile tooltip=" " header="{config_tile>/titulo}" subheader="{config_tile>/subTitulo}" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+		<tileContent>
+			<TileContent>
+				<FlexBox renderType="Bare" height="100%" alignItems="Center">
+					<core:Icon cd:id="iconSuccess" src="{config_tile>/success_icon}" color="{config_tile>/success_color}" size="3rem" />
+					<core:Icon cd:id="iconError" visible="false" src="{config_tile>/error_icon}" color="{config_tile>/error_color}" size="3rem" />
+				</FlexBox>
+			</TileContent>
+		</tileContent>
+	</GenericTile>
+</core:FragmentDefinition>

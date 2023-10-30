@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<GenericTile valueColor="Good" frameType="TwoByOne" header="{config_tile>/titulo}" subheader="{config_tile>/subtitulo}" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+		<TileContent>
+			<VBox>
+				<Text text="{config_tile>/texto}"/>
+				<HBox alignItems="Center" justifyContent="SpaceBetween">
+					<Text text=""/>
+					<ProgressIndicator state="Success" width="10rem" displayValue="{= ${dados>/}[${config_tile>/actual}] || 0} / {config_tile>/max}" percentValue="{= (${dados>/}[${config_tile>/actual}] / ${config_tile>/max}) * 100}" />
+				</HBox>
+			</VBox>
+		</TileContent>
+	</GenericTile>
+</core:FragmentDefinition>

@@ -1,0 +1,46 @@
+<mvc:View controllerName="bti_framework.pages._base.relatorios.padrao_data.config"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:mvc="sap.ui.core.mvc">
+    <f:DynamicPage id="page">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="Relatório Data"/>
+                </f:heading>
+                <f:actions>
+                    <Button text="Pesquisar" press="loadTableData" type="Emphasized"/>
+                    <Button text="Salvar Filtro" press="saveFilter" type="Ghost"/>
+                </f:actions>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader pinnable="false">
+                <FlexBox>
+                    <HBox alignItems="Center" class="sapUiSmallMarginEnd">
+                        <DatePicker id="startDate" placeholder="Data inicial" displayFormat="dd/MM/yyyy" valueFormat="dd/MM/yyyy" value="{form>/startDate}" change="validateDate('start')" />
+                    </HBox>
+
+                    <HBox alignItems="Center" class="sapUiSmallMarginEnd">
+                        <DatePicker id="endDate" placeholder="Data final" displayFormat="dd/MM/yyyy" valueFormat="dd/MM/yyyy" value="{form>/endDate}" change="validateDate('end')" />
+                    </HBox>
+
+                    <HBox alignItems="Center" class="sapUiSmallMarginEnd">
+                        <ComboBox id="dateRange" placeholder="Intervalo de data" selectedKey="{form>/dataRange}" selectionChange="onDateRangeChange" showClearIcon="true">
+                            <!-- <core:Item text="Intervalo de data" /> -->
+                            <core:Item key="today" text="Hoje" />
+                            <core:Item key="yesterday" text="Ontem" />
+                            <core:Item key="thisWeek" text="Esta semana" />
+                            <core:Item key="pastWeek" text="Semana passada" />
+                            <core:Item key="thisMonth" text="Este mês" />
+                            <core:Item key="pastMonth" text="Mês passado" />
+                        </ComboBox>
+                    </HBox>
+                </FlexBox>
+            </f:DynamicPageHeader>
+        </f:header>
+    </f:DynamicPage>
+</mvc:View>

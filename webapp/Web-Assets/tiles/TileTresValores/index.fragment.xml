@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<GenericTile tooltip=" " header="{config_tile>/titulo}" subheader="{config_tile>/subTitulo}" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+		<TileContent>
+			<VBox justifyContent="SpaceBetween">
+				<Text text="{config_tile>/prefixo_1}{= ${dados>/}[${config_tile>/valor_1}] || 0}{config_tile>/sulfixo_1}"/>
+				<Text text="{config_tile>/prefixo_2}{= ${dados>/}[${config_tile>/valor_2}] || 0}{config_tile>/sulfixo_2}"/>
+				<Text text="{config_tile>/prefixo_3}{= ${dados>/}[${config_tile>/valor_3}] || 0}{config_tile>/sulfixo_3}"/>
+			</VBox>
+		</TileContent>
+	</GenericTile>
+</core:FragmentDefinition>

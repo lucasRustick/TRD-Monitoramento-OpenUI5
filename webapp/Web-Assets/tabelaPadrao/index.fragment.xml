@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:t="sap.ui.table"
+	xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+
+	<Panel height="100%">
+		<t:Table columns="{internalCollumns>/}" rows="{/}" visibleRowCountMode="Auto" selectionBehavior="RowOnly" selectionMode="Single" noData="{config>/noData}">
+			<t:extension>
+				<OverflowToolbar cd:id="toolbar" class="sapMTBHeader-CTX">
+					<Title visible="{= ${config>/title} ? true : false}" titleStyle="H4" text="{config>/title} ({= ${/length} || 0})"/>
+					<ToolbarSpacer/>
+					<Button cd:id="TP-clearFilter" icon="sap-icon://clear-filter" tooltip="Limpar Filtros" press="clearFilters"/>
+					<!-- <Button cd:id="TP-exportPDF" icon="sap-icon://pdf-attachment" tooltip="Baixar para PDF" press="exportar_PDF"/> -->
+					<Button cd:id="TP-exportCSV" icon="sap-icon://excel-attachment" tooltip="Baixar para CSV" press="exportar_CSV"/>
+				</OverflowToolbar>
+			</t:extension>
+			<t:rowSettingsTemplate>
+				<t:RowSettings />
+			</t:rowSettingsTemplate>
+			<t:columns>
+				<t:Column cd:config="{internalCollumns>}">
+					<Label textAlign="Center" width="100%" text="{internalCollumns>label}" />
+					<t:template>
+						<Text textAlign="Center" width="100%" wrapping="false"/>
+					</t:template>
+				</t:Column>
+			</t:columns>
+		</t:Table>
+	</Panel>
+
+</core:FragmentDefinition>

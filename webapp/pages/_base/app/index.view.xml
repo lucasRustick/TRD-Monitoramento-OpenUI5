@@ -1,0 +1,65 @@
+<mvc:View controllerName="bti_framework.pages._base.App.config"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns:tnt="sap.tnt"
+	xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns="sap.m">
+	<tnt:ToolPage id="toolPage" class="sapUiNoContentPadding">
+		<tnt:header>
+			<!-- Cabeçalho da página com botões e Título -->
+			<tnt:ToolHeader>
+				<Button id="botaoMenu" icon="sap-icon://menu" press="toggleMenu"/>
+				<Button id="botaoVoltar" icon="sap-icon://nav-back" press="window.history.back()"/>
+				<ToolbarSpacer/>
+				<Title text="Ambiente BES"/>
+				<ToolbarSpacer/>
+				<Button id="botaoUsuario" text="{dadosUsuario>/Name}" iconFirst="false" icon="sap-icon://customer" press="onUserPress"/>
+			</tnt:ToolHeader>
+		</tnt:header>
+
+		<!-- Menu Lateral -->
+		<tnt:sideContent>
+			<tnt:SideNavigation id="menuLateral">
+				<tnt:NavigationList items="{menu_lateral>/}">
+					<tnt:NavigationListItem expanded="false" href="{menu_lateral>url}" icon="{menu_lateral>icon}" text="{menu_lateral>name}" items="{path: 'menu_lateral>items', templateShareable: true}">
+						<tnt:NavigationListItem href="{menu_lateral>url}" icon="{menu_lateral>icon}" text="{menu_lateral>name}" />
+					</tnt:NavigationListItem>
+				</tnt:NavigationList>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+
+		<tnt:mainContents>
+			<VBox>
+				<App id="mainContent" />
+				<!-- <OverflowToolbar id="otbFooter">
+					<Image src="../src/images/BTI Estrategica.jpg" width="70px"/>
+
+					<ToolbarSpacer/>
+
+					<OverflowToolbarMenuButton text="Export" icon="sap-icon://world">
+						<menu>
+							<Menu itemSelected="onMenuAction">
+								<MenuItem text="Origem: {lastPackage>/sender}" icon="sap-icon://email" />
+								<MenuItem text="Enviado: {lastPackage>/formatedDate}" icon="sap-icon://paper-plane" />
+								<MenuItem text="Máquina: {= ${lastPackage>/payload/device_id} || ${lastPackage>/payload/device/name}}" icon="sap-icon://machine" />
+							</Menu>
+						</menu>
+					</OverflowToolbarMenuButton>
+
+					<toolbarSeparator></toolbarSeparator>
+
+					<OverflowToolbarMenuButton text="Export" icon="sap-icon://cloud-check">
+						<menu>
+							<Menu itemSelected="pingDataReceiver" closed="pingDataReceiver">
+								<MenuItem text="Conexão MQTT: {conections>/mqtt}" icon="sap-icon://cloud-check" />
+								<MenuItem id="sender" text="Envio de dados: {conections>/send}" icon="sap-icon://upload-to-cloud" />
+								<MenuItem id="receiver" text="Recebimento de dados: {conections>/receive}" icon="sap-icon://download-from-cloud" />
+							</Menu>
+						</menu>
+					</OverflowToolbarMenuButton>
+				</OverflowToolbar> -->
+			</VBox>
+		</tnt:mainContents>
+
+	</tnt:ToolPage>
+</mvc:View>

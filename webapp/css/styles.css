@@ -1,0 +1,12 @@
+.debug {
+    outline: 1px solid red !important;
+}
+
+.imglogin>*:first-child {
+    display: flex;
+    justify-content: center;
+}
+
+.menuBanner {
+    overflow: hidden;
+}

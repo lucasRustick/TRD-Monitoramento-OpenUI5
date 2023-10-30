@@ -1,0 +1,29 @@
+<mvc:View controllerName="bti_framework.pages._base.recuperarSenha.config"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page class="login" showHeader="false">
+        <FlexBox class="imglogin" justifyContent="Center" width="100%">
+            <Image src="pages/_base/login/src/bti.jpg" width="60%"/>
+        </FlexBox>
+
+        <FlexBox class="sapUiSmallMargin" justifyContent="Center">
+            <VBox justifyContent="Center" height="15vh" class="sapUiSmallMargin">
+
+                <!-- caixa de texto onde entra o email para recuperação de senha do usuario -->
+                <Input id="user_login" width="20rem" placeholder="Insira seu nome de usuário"/>
+
+                <!-- botão para enviar informações -->
+                <FlexBox class="sapUiTinyMarginTopBottom" justifyContent="Center">
+                    <Button width="15rem" text="Voltar para Login" press="window.history.back()"/>
+                </FlexBox>
+
+                <!-- Botão para redefinir senha  -->
+                <FlexBox justifyContent="Center">
+                    <Button width="15rem" text="Pedir nova de senha" press="resetPassword" type="Emphasized"/>
+                </FlexBox>
+            </VBox>
+        </FlexBox>
+    </Page>
+</mvc:View>

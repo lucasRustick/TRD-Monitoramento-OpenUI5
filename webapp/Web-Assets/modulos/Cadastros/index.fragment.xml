@@ -1,0 +1,51 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+    xmlns:f="sap.f"
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+    xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <SplitApp cd:id="SplitApp">
+        <masterPages>
+            <List cd:id="lista" items="{listaCadastro>/}" mode="SingleSelectMaster" selectionChange="navCadastros">
+                <StandardListItem cd:page="{listaCadastro>page}" title="{listaCadastro>titulo}" type="Navigation"/>
+            </List>
+        </masterPages>
+        <detailPages>
+            <Page cd:id="cadastros" showHeader="{device>/system/phone}" showNavButton="true" navButtonPress="voltarMaster_handler">
+                <f:DynamicPage cd:id="page" class="sapUiNoContentPadding">
+                    <!-- cabeçalho/titulo -->
+                    <f:title>
+                        <f:DynamicPageTitle cd:id="pageTitle">
+                            <f:heading>
+                                <Title text="{telaCadastro>/title}"/>
+                            </f:heading>
+                            <f:expandedContent>
+                                <Label text="{telaCadastro>/description}"/>
+                            </f:expandedContent>
+                            <f:actions>
+                                <!-- botões da tabela -->
+                                <Button cd:key="tabela" text="{config>/addButtonTitle}" press="navToCadastro_handler" type="Emphasized"/>
+                                <Button cd:key="tabela" cd:disable="true" text="{config>/editButtonTitle}" press="navToEdit_handler" type="Emphasized" enabled="false"/>
+                                <Button cd:key="tabela" cd:disable="true" text="{config>/deleteButtonTitle}" press="delete_handler" enabled="false"/>
+
+                                <!-- Botões adicionar / editar -->
+                                <Button cd:key="editar" text="{config>/updateButtonTitle}" press="update_handler" type="Emphasized" visible="false"/>
+                                <Button cd:key="adicionar" text="{config>/finishButtonTitle}" press="create_handler" type="Emphasized" visible="false"/>
+                                <Button cd:key="adicionar/editar" text="{config>/cancelButtonTitle}" press="cancelarOperacao_handler" visible="false"/>
+                            </f:actions>
+                        </f:DynamicPageTitle>
+                    </f:title>
+
+                    <!-- Conteudo da página -->
+                    <f:content>
+                        <IconTabBar cd:id="barra" select="onTabBarSelect" stretchContentHeight="true">
+                            <items>
+                                <IconTabFilter cd:id="tabela" key="tabela" text="{config>/tableTabTitle}"/>
+                                <IconTabFilter cd:id="form" key="adicionar" text="{config>/addTabTitle}"/>
+                            </items>
+                        </IconTabBar>
+                    </f:content>
+                </f:DynamicPage>
+            </Page>
+        </detailPages>
+    </SplitApp>
+</core:FragmentDefinition>

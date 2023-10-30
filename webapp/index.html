@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta charset="utf-8" />
+
+	<title>Framework WEB BTI</title>
+
+	<script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/1.109.0/resources/sap-ui-core.js" data-sap-ui-resourceroots='{
+				"bti_framework": "./"
+			}' data-sap-ui-theme="sap_horizon" data-sap-ui-oninit="module:sap/ui/core/ComponentSupport" data-sap-ui-async="true"
+		data-sap-ui-compatVersion="edge" data-sap-ui-frameOptions="trusted" data-sap-ui-xx-waitForTheme="true"
+		data-sap-ui-logLevel="ERROR"></script>
+
+	<script src="./utils//env.js"></script>
+
+	<!-- Bibliotecas bower -->
+	<script src="./bower_components/axios/dist/axios.min.js"></script>
+	<script src="./bower_components/js-md5/build/md5.min.js"></script>
+	<script src="./bower_components/moment/moment.js"></script>
+	<script src="./bower_components/socket.io/client-dist/socket.io.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.3/dist/chart.umd.min.js"></script>
+
+	<script>
+		// Configuração axios
+		axios.defaults.baseURL = globalThis.env.url
+		axios.defaults.headers.common['Authorization'] = localStorage.getItem("token")
+	</script>
+</head>
+
+<body class="sapUiBody">
+	<div data-sap-ui-component data-name="bti_framework"></div>
+</body>
+
+</html>

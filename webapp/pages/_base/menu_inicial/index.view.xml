@@ -1,0 +1,31 @@
+<mvc:View controllerName="bti_framework.pages._base.menu_inicial.config"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns="sap.m">
+    <Page id="paginaInicial" showHeader="false" class="sapUiNoContentPadding">
+        <!-- Imagem tela inicial -->
+
+        <FlexBox class="menuBanner" justifyContent="Center" height="15rem" alignItems="Center">
+            <Image src="pages/_base/menu_inicial/src/bti.jpg" width="100%" />
+        </FlexBox>
+
+        <l:BlockLayout content="{menuTiles>/}" background="Dashboard">
+            <l:BlockLayoutRow content="{path: 'menuTiles>data', templateShareable: false}">
+                <l:BlockLayoutCell backgroundColorSet="ColorSet11">
+                    <FlexBox direction="Column" justifyContent="SpaceBetween">
+                        <VBox>
+                            <core:Icon src="{menuTiles>icone}" size="2.5rem" color="Default"/>
+                            <Title text="{menuTiles>titulo}" titleStyle="H4" class="sapUiTinyMarginTopBottom" wrapping="true"/>
+                        </VBox>
+                        <FlexBox direction="Column" justifyContent="SpaceBetween" class="sapUiTinyMarginTop">
+                            <Text text="{menuTiles>descricao}"/>
+                            <Button text="{menuTiles>titulo}" width="100%" cd:key="{menuTiles>key}" press="link" class="sapUiTinyMarginTop"/>
+                        </FlexBox>
+                    </FlexBox>
+                </l:BlockLayoutCell>
+            </l:BlockLayoutRow>
+        </l:BlockLayout>
+    </Page>
+</mvc:View>
