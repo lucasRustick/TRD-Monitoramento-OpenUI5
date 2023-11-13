@@ -1,0 +1,171 @@
+[
+    {
+        "placa": "AM3432 7/9",
+        "entregas": [
+            {
+                "entrega": "34256",
+                "status":"None"
+            },
+            {
+                "entrega": "23190",
+                "status":"Warning"
+            },
+            {
+                "entrega": "27362",
+                "status":"Warning"
+            }
+        ]
+        
+    },
+    {
+        "placa": "PQR-6789 5/5",
+        "entregas": [
+            {
+                "entrega": "98765",
+                "status":"Success"
+            },
+            {
+                "entrega": "12345",
+                "status":"Warning"
+            },
+            {
+                "entrega": "54321",
+                "status":"Success"
+            },
+            {
+                "entrega": "67890",
+                "status":"Warning"
+            },
+            {
+                "entrega": "13579",
+                "status":"Error"
+            }
+        ]
+        
+    },
+    {
+        "placa": "PQR-6789 5/5",
+        "entregas": [
+            {
+                "entrega": "98765",
+                "status":"Success"
+            },
+            {
+                "entrega": "12345",
+                "status":"Warning"
+            },
+            {
+                "entrega": "54321",
+                "status":"Success"
+            },
+            {
+                "entrega": "67890",
+                "status":"Warning"
+            },
+            {
+                "entrega": "13579",
+                "status":"Error"
+            }
+        ]
+        
+    },
+    {
+        "placa": "MNO-2345 15/5",
+        "entregas":  [
+            {
+                "entrega": "44444",
+                "status":"Success"
+            },
+            {
+                "entrega": "55555",
+                "status":"Success"
+            },
+            {
+                "entrega": "66666",
+                "status":"Success"
+            },
+            {
+                "entrega": "77777",
+                "status":"Success"
+            },
+            {
+                "entrega": "88888",
+                "status":"Success"
+            },
+            {
+                "entrega": "54321",
+                "status":"None"
+            },
+            {
+                "entrega": "67890",
+                "status":"Error"
+            },
+            {
+                "entrega": "13579",
+                "status":"Warning"
+            }
+        ]
+    },
+    {
+        "placa": "GHI-3456 3/5 ",
+        "entregas": [
+            {
+                "entrega": "54321",
+                "status":"Success"
+            },
+            {
+                "entrega": "98765",
+                "status":"Error"
+            },
+            {
+                "entrega": "12345",
+                "status":"None"
+            },
+            {
+                "entrega": "67890",
+                "status":"Success"
+            },
+            {
+                "entrega": "24680",
+                "status":"Success"
+            }
+        ]
+    },
+    {
+        "placa": "DEF-9012 8/5",
+        "entregas":   [
+            {
+                "entrega": "11111",
+                "status":"None"
+            },
+            {
+                "entrega": "99999",
+                "status":"Warning"
+            },
+            {
+                "entrega": "33333",
+                "status":"Error"
+            },
+            {
+                "entrega": "22222",
+                "status":"Success"
+            },
+            {
+                "entrega": "77777",
+                "status":"None"
+            },
+            {
+                "entrega": "54321",
+                "status":"Warning"
+            },
+            {
+                "entrega": "67890",
+                "status":"Error"
+            },
+            {
+                "entrega": "13579",
+                "status":"Warning"
+            }
+        ]
+    }
+]

@@ -26,6 +26,13 @@ export namespace Database {
         Active: 1 | 0
     }
 
+    export interface Agents {
+        reduce(arg0: (acc: any, current: any) => any, arg1: undefined[]): unknown
+        IdAgents: number
+        AgentName: string
+        Active: 1 | 0
+    }
+
     export interface UserGroups {
         IdUserGroup: number
         IdUserGroupType: number

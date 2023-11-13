@@ -13,6 +13,8 @@ export default class CadastrosOperacionais extends BaseController {
             listaCadastro: [
                 { titulo: "Empresas", page: "companys" },
                 { titulo: "Plantas", page: "plants" },
+                { titulo: "Agentes", page: "agents" },
+                { titulo: "Teste", page: "agents" },
             ],
             registerData: RegisterData
         })

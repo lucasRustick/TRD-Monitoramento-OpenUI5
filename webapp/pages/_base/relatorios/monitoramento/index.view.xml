@@ -10,12 +10,14 @@
         <f:title>
             <f:DynamicPageTitle>
                 <f:heading>
-                    <Title text="Monitoramento"/>
+                    <HBox >
+                        <Title text="Monitoramento"/>
+                    </HBox>
                 </f:heading>
                 <f:actions>
-                    <Button text="Legenda" type="Emphasized"/>
+                    <Button text="Legenda" press="abrirLegenda" type="Emphasized"/>
                     <Button text="Maps" type="Emphasized"/>
-                    <Button text="Pesquisar" type="Emphasized"/>
+                    <Button text="Pesquisar" type="Emphasized" press="loadTableData"/>
                 </f:actions>
             </f:DynamicPageTitle>
         </f:title>
@@ -23,7 +25,7 @@
             <f:DynamicPageHeader pinnable="false">
                 <FlexBox wrap="Wrap">
                     <HBox alignItems="Center" class="sapUiSmallMarginEnd">
-                        <ComboBox placeholder="Selecione a unidade" selectedKey="{form>/dataRange}" selectionChange="" showClearIcon="true">
+                        <ComboBox placeholder="Selecione a unidade" selectedKey="{campos>/Unidade}" selectionChange="" showClearIcon="true">
                             <!-- <core:Item text="Intervalo de data" /> -->
                             <core:Item key="POA" text="POA" />
                             <core:Item key="RIO" text="RIO" />
@@ -34,22 +36,29 @@
                         </ComboBox>
                     </HBox>
 
+                    <!-- <HBox alignItems="Center" class="sapUiSmallMarginEnd">
+                        <Input width="15rem" placeholder="Tarefa" value="{campos>/Tarefa}"/>
+                    </HBox> -->
+
                     <HBox alignItems="Center" class="sapUiSmallMarginEnd">
-                        <Input width="15rem" placeholder="Tarefa"/>
+                        <Input width="15rem" placeholder="Agente" value="{campos>/Entidade}" id="agente"/>
                     </HBox>
 
                     <HBox alignItems="Center" class="sapUiSmallMarginEnd">
-                        <Input width="15rem" placeholder="Entidade"/>
-                    </HBox>
-
-                    <HBox alignItems="Center" class="sapUiSmallMarginEnd">
-                        <Input width="15rem" placeholder="Tarefa já atribuaida"/>
+                        <Input width="15rem" placeholder="Tarefa" value="{campos>/TarefaAtribuida}"/>
                     </HBox>
                 </FlexBox>
             </f:DynamicPageHeader>
         </f:header>
         <f:content>
-            
+            <Panel class="sapUiTinyMarginTopBottom" content="{Monitoramento>/}">
+                <HBox wrap="Wrap">
+                    <ObjectStatus text="{Monitoramento>Name}" class="sapUiMediumMarginEnd tamanho" />
+                    <HBox wrap="Wrap" items="{Monitoramento>tasks}" alignItems="Center">
+                        <GenericTag text="{Monitoramento>key}" status="{Monitoramento>Status}" class="sapUiSmallMarginEnd sapUiSmallMarginBottom" />
+                    </HBox>
+                </HBox>
+            </Panel>
         </f:content>
     </f:DynamicPage>
 </mvc:View>
